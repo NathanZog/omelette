@@ -96,8 +96,8 @@ let poele ={
         setTimeout(()=>{
             let newMelange = "omelette";
             this.contenu.push(bol.contenu);
-            poele.contenu.etat = "cuit";
-            console.log(`le ${newMelange} est ${poele.contenu.etat}`)
+            poele.contenu.etat = "cuite";
+            console.log(`l'${newMelange} est ${poele.contenu.etat}`)
         },4000)
     }
 }
@@ -109,6 +109,7 @@ let bol ={
         nomMelange = newMelange;
         etat = "pas cuit";
         this.contenu = this.contenu;
+        bol.contenu[0].splice(0,5);
     }
 }
 
