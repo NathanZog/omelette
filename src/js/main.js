@@ -1,6 +1,6 @@
 import Ingredient from './classe.js';
 
-import {personne,maison,outil,epicerie,poele,myCuisson,bol} from './objet.js';
+import {personne,maison,outil,epicerie,poele,bol} from './objet.js';
 
 let oeuf = new Ingredient("oeuf", "coquille pleine",2)
 let oignons = new Ingredient("oignons", "entier",1.5);
@@ -14,7 +14,7 @@ epicerie.ingredients.push(oeuf,oignons,sel,poivre,curcuma,paprika);
 console.log(epicerie.ingredients);
 
 
-console.log(personne,maison,outil,epicerie,poele,myCuisson,bol);
+console.log(personne,maison,outil,epicerie,poele,bol);
 
 
 maison.personnes.push(personne);
@@ -35,3 +35,4 @@ console.log(epicerie,maison);
 console.log(`${personne.nom} rentre a la maison préparer son omelette`);
 personne.couper(bol.contenu,outil);
 console.log(bol);
+poele.cuir();

@@ -20,12 +20,13 @@ let personne = {
     },
     couper(ingredient,outil){
         for(let i = 0; i < bol.contenu[0].length; i++){
+            // attention array dans array
             if(ingredient[0][i].etat == "entier"){
                 ingredient[0][i].etat = outil.action;
                 console.log(`les ${ingredient[0][i].nom} est ${ingredient[0][i].etat}`)
             }else if(ingredient[0][i].etat == "coquille pleine"){
                 ingredient[0][i].etat = "cassé"
-                console.log(`l'${ingredient[0][i].nom} est ${ingredient[0][i].etat}`)
+                console.log(`l'${ingredient[0][i].nom} sont ${ingredient[0][i].etat}`)
             }else{
                 console.log(`etat de ${ingredient[0][i].nom} n'est pas entier`)
             }
@@ -92,18 +93,26 @@ let epicerie ={
 let poele ={
     contenu : [],
     cuir(){
-        this.contenu = "cuit";
+        setTimeout(()=>{
+            let newMelange = "omelette";
+            this.contenu.push(bol.contenu);
+            poele.contenu.etat = "cuit";
+            console.log(`le ${newMelange} est ${poele.contenu.etat}`)
+        },4000)
     }
 }
-let myCuisson = setTimeout(poele.cuir,4000);
+
 
 let bol ={
     contenu :[],
     melanger(nomMelange){
-        newMelange = `${nomMelange} pas cuit`
-        this.contenu.push(newMelange)
+        nomMelange = newMelange;
+        etat = "pas cuit";
+        this.contenu = this.contenu;
     }
 }
 
 
-export {personne,maison,outil,epicerie,poele,myCuisson,bol};
+
+
+export {personne,maison,outil,epicerie,poele,bol};
