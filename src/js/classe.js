@@ -1,7 +1,8 @@
 class Ingredient {
-    constructor(nom,etat){
+    constructor(nom,etat,prix){
         this.nom = nom;
         this.etat = etat;
+        this.prix = prix;
     }
 }
 
